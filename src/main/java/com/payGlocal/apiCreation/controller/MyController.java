@@ -17,7 +17,7 @@ public class MyController {
 	@GetMapping("/bankDetails")
 	public List<Data> getData() throws FileNotFoundException {
 		List<Data> list = new ArrayList<>();
-		Scanner sc=new Scanner(new FileReader("D:\\eclipse-project\\apiCreation\\src\\main\\resources\\bin-file-assignment.csv"));
+		Scanner sc=new Scanner(new FileReader("src\\main\\resources\\bin-file-assignment.csv"));
 			while(sc.hasNext()) {
 				String input[] = sc.nextLine().split(";", -1);
 				
@@ -43,7 +43,7 @@ public class MyController {
 	
 	@GetMapping("/bankDetails/{BinRange}")
 	public Data getPerticularData(@PathVariable String BinRange) throws FileNotFoundException {
-		Scanner sc=new Scanner(new FileReader("D:\\eclipse-project\\apiCreation\\src\\main\\resources\\bin-file-assignment.csv"));
+		Scanner sc=new Scanner(new FileReader("src\\main\\resources\\bin-file-assignment.csv"));
 		Data data=new Data();
 		while(sc.hasNext()) {
 			String input[]= sc.nextLine().split(";", -1);
